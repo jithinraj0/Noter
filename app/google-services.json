@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1087313904331",
+    "firebase_url": "https://noteapp-503c5.firebaseio.com",
+    "project_id": "noteapp-503c5",
+    "storage_bucket": "noteapp-503c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087313904331:android:f8f02e30e4540e624e914e",
+        "android_client_info": {
+          "package_name": "com.jithinraj.noter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087313904331-mt03tisp5q8i9shbtgmvi15l4lmn24cr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe8BQLphyvqp2fImb4datqeAREabGOJco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087313904331-mt03tisp5q8i9shbtgmvi15l4lmn24cr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
