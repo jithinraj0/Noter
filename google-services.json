@@ -1,35 +1,41 @@
 {
   "project_info": {
-    "project_number": "1087313904331",
-    "firebase_url": "https://noteapp-503c5.firebaseio.com",
-    "project_id": "noteapp-503c5",
-    "storage_bucket": "noteapp-503c5.appspot.com"
+    "project_number": "146537824078",
+    "project_id": "fir-demo-b3f9d",
+    "storage_bucket": "fir-demo-b3f9d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1087313904331:android:f8f02e30e4540e624e914e",
+        "mobilesdk_app_id": "1:146537824078:android:be3cb9be02cf6aec82681f",
         "android_client_info": {
           "package_name": "com.jithinraj.noter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1087313904331-mt03tisp5q8i9shbtgmvi15l4lmn24cr.apps.googleusercontent.com",
+          "client_id": "146537824078-44eh2tq0mvo0nmj3emaipi4t0o8nmolb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCe8BQLphyvqp2fImb4datqeAREabGOJco"
+          "current_key": "AIzaSyBHkC6f84F9s5jArDlqp1axFqezFQWz3SQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1087313904331-mt03tisp5q8i9shbtgmvi15l4lmn24cr.apps.googleusercontent.com",
+              "client_id": "146537824078-44eh2tq0mvo0nmj3emaipi4t0o8nmolb.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "146537824078-pbnbhd7j7mbf0ut6or2lea23ov71uqf5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ca.georgian.jithinraj.FirebaseDemo"
+              }
             }
           ]
         }

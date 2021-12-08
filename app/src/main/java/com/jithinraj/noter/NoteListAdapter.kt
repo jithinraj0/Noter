@@ -40,6 +40,9 @@ class NoteListAdapter(
             holder.title.text = "note.title"
             holder.description.text = "note.description"
         }
+        holder.itemView.setOnClickListener{
+            viewNote(note)
+        }
     }
 
     override fun getItemCount() = notesList.size
@@ -47,8 +50,8 @@ class NoteListAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         internal var title: TextView
         internal var description: TextView
-         internal var edit:ImageButton
-         internal var delete: ImageButton
+         internal var edit:ImageView
+         internal var delete: ImageView
 
         init {
             title = itemView.findViewById(R.id.lbltitle)
@@ -66,6 +69,16 @@ class NoteListAdapter(
         intent.putExtra("UpdateNoteId", note.id)
         intent.putExtra("UpdateNoteTitle", note.title)
         intent.putExtra("UpdateNoteDescription", note.description)
+        context.startActivity(intent)
+    }
+
+    private fun viewNote(note: NoteModel) {
+        val intent = Intent(context, AddNoteActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.putExtra("UpdateNoteId", note.id)
+        intent.putExtra("UpdateNoteTitle", note.title)
+        intent.putExtra("UpdateNoteDescription", note.description)
+        intent.putExtra("isFromView", "true")
         context.startActivity(intent)
     }
 
