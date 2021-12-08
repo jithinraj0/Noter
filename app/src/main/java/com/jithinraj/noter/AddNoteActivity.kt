@@ -1,9 +1,12 @@
 package com.jithinraj.noter
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isInvisible
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_add_note.*
 
@@ -27,16 +30,45 @@ class AddNoteActivity : AppCompatActivity() {
 
             txttitle.setText(bundle.getString("UpdateNoteTitle"))
             txtdesc.setText(bundle.getString("UpdateNoteDescription"))
+
+            if(bundle.getString("isFromView")!=null){
+                btnAdd.isInvisible=true
+            }
         }
 
         btnAdd.setOnClickListener(){
             val title=txttitle.text.toString()
             val description=txtdesc.text.toString()
 
-            addNote(title, description)
+            if (title.isNotEmpty()) {
+                if (id.isNotEmpty()) {
+                    updateNote(id, title, description)
+                } else {
+                    addNote(title, description)
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+            }
+
 
         }
 
+    }
+
+    private fun updateNote(id: String, title: String, content: String) {
+        val note = NoteModel(id, title, content).toMap()
+
+        firestoreDB!!.collection("notes")
+            .document(id)
+            .set(note)
+            .addOnSuccessListener {
+                Log.e(TAG, "Note document update successful!")
+                Toast.makeText(applicationContext, "Note has been updated!", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Log.e(TAG, "Error adding Note document", e)
+                Toast.makeText(applicationContext, "Note could not be updated!", Toast.LENGTH_SHORT).show()
+            }
     }
 
 
